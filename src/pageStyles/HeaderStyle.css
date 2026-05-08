@@ -1,0 +1,240 @@
+.header{
+      position: relative;
+      background-color: #ffffff;
+      max-height: 100px;
+      width: 100%;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+}
+
+.header__container{
+      position: relative;
+      height: 60px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 12px;
+}
+
+.header__image img{
+      height: 25px;
+      width: 120px;
+}
+
+.btn__catalog{
+      width: 126px;
+      height: 44px;
+      background-color: #006fff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      color: white;
+      font-size: 16px;
+      margin: 5px;
+}
+
+.input__wrapper{
+      position: relative;
+      flex: 1;
+      max-width: 689px;
+      min-width: 150px;
+}
+.header__input{
+      border: 2px solid #006fff;
+      border-radius: 12px;
+      height: 44px;
+      width: 100%;
+      text-indent: 100px;
+}
+.input__filter{
+      background-color: #f5f7fa;
+      position: absolute;
+      left: 12px;
+      top: 45%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      color: gray;
+}
+
+.filter__menu{
+      position: absolute;
+      background-color: white;
+      height: 300px;
+      width: 200px;
+      border: 2px solid lightgray;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(-50%);
+      top: 100%;
+      left: 30%;
+      margin: 0 auto;
+      z-index: 100;
+      border-radius: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      gap: 10px;
+      padding: 20px;
+      color: gray;
+}
+.filter__menu div{
+      cursor: pointer;
+}
+.filter__menu-close{
+      position: absolute;
+      border-radius: 50px;
+      border: 1px solid lightgray;
+      font-size: 20px;
+      right: 10px;
+      top: 5px;
+}
+
+
+.rightSideBar{
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      font-size: 14px;
+      overflow-x: auto;
+      white-space: nowrap;
+      margin: 5px;
+      z-index: 1;
+      overflow-x: visible;
+      white-space: nowrap;
+}
+.rightSideBar a{
+      position: relative;
+      text-decoration: none;
+      color: gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+.rightSideBar a img{
+      height: 25px;
+      width: auto;
+}
+
+.cart-badge,
+.favorites-badge {
+  position: absolute;
+  top: -5px;  
+  right: -2px;  
+  background: #f1117e;
+  color: white;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  font-size: 10px; 
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  line-height: 1;
+}
+
+.favorites-badge{
+  right: 4px;
+}
+
+
+.bottomSideBar{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 14px;
+      overflow-x: auto;
+      gap: 15px ;
+      white-space: nowrap;
+}
+
+.bottomSideBar__container-left{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+}
+.bottomSideBar__container-left a{
+      text-decoration: none;
+      color: gray;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+}
+
+.bottomSideBar__container-right{
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+}
+.bottomSideBar__container-right a{
+      text-decoration: none;
+      color: gray;
+}
+
+@media (max-width: 1200px){
+      .rightSideBar{
+            gap: 10px;
+      }
+}
+
+@media (max-width: 1024px){
+      .header{
+            height: 90px;
+      }
+      .rightSideBar{
+            gap: 8px;
+            font-size: 12px;
+      }
+      .rightSideBar a img{
+            height: 20px;
+      }
+      .bottomSideBar{
+            padding: 5px;
+      }
+      .btn__catalog{
+            width: 100px;
+            height: 40px;
+      }
+      .header__input{
+            height: 40px;
+      }
+}
+
+@media (max-width: 924px){
+      .header{
+            height: 80px;
+      }
+      .bottomSideBar{
+            padding: 0;
+      }
+}
+
+@media (max-width: 768px){
+      .header__image img{
+            height: 22px;
+            width: 90px;
+            margin-left: -10px;
+      }
+      .header__input{
+            height: 36px;
+            text-indent: 50px;
+      }
+      .btn__catalog{
+            width: 75px;
+            height: 36px;
+      }
+}
