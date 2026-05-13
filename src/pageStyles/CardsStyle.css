@@ -73,6 +73,12 @@
       border-radius: 8px;
 }
 
+.quantity{
+      position: absolute;
+      right: 5px;
+      font-size: 14px;
+}
+
 
 .cart-link {
       position: relative;
@@ -104,3 +110,4 @@
             grid-template-columns: repeat(2, 1fr);
       }
 }
+

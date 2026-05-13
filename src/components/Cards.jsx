@@ -114,7 +114,7 @@ const Cards = ({ category, sorted, searchValue }) => {
     <div className="container">
       {finalData.map(item => (
         <div className="container__card" key={item.id}>
-          <button className="like__button" onClick={()=>toggleFavorite(item)}>{isFavorite(item) ? '❤️' : '🤍'}</button>
+          <button className="like__button" onClick={()=>toggleFavorite(item)}>{isFavorite(item.id) ? '❤️' : '🤍'}</button>
           <div className="container__image">
             <img src={item.image} alt={item.title} />
           </div>

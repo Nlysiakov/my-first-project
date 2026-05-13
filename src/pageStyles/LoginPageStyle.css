@@ -1,0 +1,86 @@
+
+.auth-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 40px;
+  min-height: 45vh;   
+  width: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.logout-container{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 250px;
+  height: 80px;
+  background-color: #ffffff;
+  margin-top: 40px;
+  
+  border-radius: 12px;
+  z-index: 10000;
+}
+
+
+
+.logout-btn{
+  width: 140px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: rgb(227, 26, 26);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+} 
+
+.auth-form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.auth-form input{
+  height: 40px;
+  width: 220px;
+  border-radius: 10px;
+  border: 2px solid #006fff;
+}
+
+.login-btn{
+  width: 140px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #006fff;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.no-acc{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.registration-link{
+  text-decoration: none;
+  color: #006fff;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.registration-btn{
+  width: 140px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #006fff;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+

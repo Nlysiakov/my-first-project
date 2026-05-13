@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/useCart";
 import Header from "../components/Header.jsx";
 import "../styles.css"
+import "../pageStyles/CartPageStyle.css"
 
 
 export function CartPage(){
@@ -14,29 +15,31 @@ export function CartPage(){
     getTotalPrice,
     cardCount,
     totalPrice,
+    toOrders
   }=useCart()
 
   if(cart.length===0){
     return (
-      <div>
+      <div className="main">
         <Header></Header>
-        <h2>Корзина пуста</h2>
-        <div>Воспользуйтесь поиском, чтобы найти всё, что нужно.</div>
-        <div>Если в Корзине были товары, войдите, чтобы посмотреть список</div>
+        <div className="cart-container">
+        <h2 className="text1">Корзина пуста</h2>
+        <div className="text2">Воспользуйтесь поиском, чтобы найти всё, что нужно.</div>
+        <div className="text3">Если в Корзине были товары, войдите, чтобы посмотреть список</div>
         <Link to="/">
-        <button>Вернуться к покупкам</button>
+        <button className="back-btn">Вернуться к покупкам</button>
         </Link>
+        </div>
       </div>
     )
   }
 
   return(
-    <div>
+    <div className="main">
       <Header></Header>
       <div className="container">
       {cart.map(item => (
         <div className="container__card" key={item.id}>
-          {/* <button className="like__button" onClick={()=>handleLike(item.id)}>{likedIds.includes(item.id) ? '❤️' : '🤍'}</button> */}
           <div className="container__image">
             <img src={item.image} alt={item.title} />
           </div>
@@ -71,8 +74,11 @@ export function CartPage(){
         </div>
       ))}
     </div>
-    <div>Итого: {totalPrice}</div>
-      <button onClick={clearCart}>Очистить корзину</button>
+    <div className="total-price">Итого: {totalPrice} $</div>
+      <div className="btn-container">
+      <button className="clear-btn" onClick={clearCart}>Очистить корзину</button>
+      <button className="confirm-btn" onClick={toOrders}>Оформить заказ</button>
+      </div>
     </div>
   )
 }

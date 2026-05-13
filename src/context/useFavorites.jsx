@@ -1,68 +1,55 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, createContext, useContext } from 'react';
 
-const FAVORITES_STORAGE_KEY = "my_shop_favorites"
-const FavoritesContext=createContext()
+const FavoritesContext = createContext();
 
-export function FavoritesProvider({children}){
+export const FavoritesProvider = ({ children }) => {
+  const [favorites, setFavorites] = useState([]);
 
-  const [favorites, setFavorites]=useState([])
-  const [isLoading, setIsLoading]=useState(true)
-  
-useEffect(()=>{
-  const savedFavorites=JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY))
-  if(savedFavorites){
-    setFavorites(savedFavorites)
-  }
-  setIsLoading(false)
-},[])
+  const addToFavorites = (product) => {
+    if (!favorites.some(item => item.id === product.id)) {
+      setFavorites(prev => [...prev, product]);
+    }
+  };
 
-useEffect(()=>{
-  if(!isLoading){
-    localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites))
-  }
-},[favorites, isLoading])
+  const removeFromFavorites = (productId) => {
+    setFavorites(prev => prev.filter(item => item.id !== productId));
+  };
 
-const isFavorite=(product)=>{
-  return favorites.some(item=>item.id===product.id)
-}
+  const toggleFavorite = (product) => {
+    const exists = favorites.some(item => item.id === product.id);
+    if (exists) {
+      removeFromFavorites(product.id);
+    } else {
+      addToFavorites(product);
+    }
+  };
 
-const addToFavorites=(product)=>{
-  setFavorites(prev=>[...prev, product])
-}
+  const isFavorite = (productId) => {
+    return favorites.some(item => item.id === productId);
+  };
 
-const removeFavorites=(productId)=>{
-  setFavorites(prev=>prev.filter(item=>item.id!==productId))
-}
+  const clearFavorites = () => setFavorites([]);
 
-const toggleFavorite=(product)=>{
-  const exists=favorites.some(item=>item.id===product.id)
-  if(exists){
-    removeFavorites(product.id)
-  }else{
-    addToFavorites(product)
-  }
-}
+  const clearFavoritesOnLogout= () => setFavorites([])
 
-const totalFavoriteItems=favorites.length
+  return (
+    <FavoritesContext.Provider value={{
+      favorites,
+      addToFavorites,
+      removeFromFavorites,
+      toggleFavorite,
+      isFavorite,
+      clearFavorites,
+      totalFavorites: favorites.length,
+      clearFavoritesOnLogout
+    }}>
+      {children}
+    </FavoritesContext.Provider>
+  );
+};
 
-return (
-  <FavoritesContext.Provider value={{
-    favorites,
-    isFavorite,
-    addToFavorites,
-    removeFavorites,
-    toggleFavorite,
-    totalFavoriteItems
-  }}>
-    {children}
-  </FavoritesContext.Provider>
-  )
-}
-
-export function useFavorites(){
-  const context=useContext(FavoritesContext)
-  if(!context){
-    throw new Error("useFavorites must be used within a FavoritesProvider");
-  }
+export const useFavorites = () => {
+  const context = useContext(FavoritesContext);
+  if (!context) throw new Error('useFavorites must be used within FavoritesProvider');
   return context;
-}
+};

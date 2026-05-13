@@ -41,15 +41,6 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 20px;
 }
-.banner__timer{
-      height: 24px;
-      width: 140px;
-      background-color: black;
-      display: flex;
-      align-items: center;
-      border-radius: 8px;
-      justify-content: center;
-}
 .banner__image{
       position: absolute;
       height: 88px;
@@ -58,39 +49,39 @@
 }
 
 @media(max-width:1200px){
-    .banner__image{
-              height: 70px;
-              width: 250px;
-              right: 50px;
-        }
+      .banner__image{
+            height: 70px;
+            width: 250px;
+            right: 50px;
+            }
 }
 
 @media(max-width: 1024px){
-    .banner__text{
-              font-size: 16px;
-        }
-        .banner__image{
-              height: 70px;
-              width: 225px;
-        }
+      .banner__text{
+      font-size: 16px;
+      }
+      .banner__image{
+            height: 70px;
+            width: 225px;
+      }
 }
 
 @media(max-width: 924px){
-    .banner{
-              height: 60px;
-        }
-        .banner__image{
-              display: none;
-        }
-        .banner__text{
-              font-size: 14px;
-        }
+      .banner{
+            height: 60px;
+      }
+      .banner__image{
+            display: none;
+      }
+      .banner__text{
+            font-size: 14px;
+      }
 }
 
 @media(max-width: 768px){
-    .banner__container{
-              height: 50px;
-        }
+      .banner__container{
+            height: 50px;
+      }
 }
 
 @media (max-width: 600px){
@@ -99,10 +90,5 @@
       }
       .banner__text{
             font-size: 12px;
-      }
-      .banner__timer{
-            font-size: 12px;
-            height: 20px;
-            width: 100px;
       }
 }

@@ -24,6 +24,7 @@
 .header__image img{
       height: 25px;
       width: 120px;
+      cursor: pointer;
 }
 
 .btn__catalog{
@@ -36,13 +37,14 @@
       color: white;
       font-size: 16px;
       margin: 5px;
+      flex-shrink: 0;
 }
 
 .input__wrapper{
       position: relative;
       flex: 1;
       max-width: 689px;
-      min-width: 150px;
+      min-width: 100px;
 }
 .header__input{
       border: 2px solid #006fff;
@@ -109,6 +111,7 @@
       z-index: 1;
       overflow-x: visible;
       white-space: nowrap;
+      flex-shrink: 0;
 }
 .rightSideBar a{
       position: relative;
@@ -125,26 +128,26 @@
 
 .cart-badge,
 .favorites-badge {
-  position: absolute;
-  top: -5px;  
-  right: -2px;  
-  background: #f1117e;
-  color: white;
-  border-radius: 50%;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 4px;
-  font-size: 10px; 
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  line-height: 1;
+      position: absolute;
+      top: -5px;  
+      right: -2px;  
+      background: #f1117e;
+      color: white;
+      border-radius: 50%;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 4px;
+      font-size: 10px; 
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      line-height: 1;
 }
 
 .favorites-badge{
-  right: 4px;
+      right: 4px;     
 }
 
 
@@ -238,3 +241,68 @@
             height: 36px;
       }
 }
+
+@media (max-width: 480px) {
+      .header__container {
+      padding: 8px;
+      }
+      
+      .header__image img {
+      height: 16px;
+      width: 60px;
+      }
+      
+      .btn__catalog {
+      width: 45px;
+      height: 28px;
+      font-size: 11px;
+      border-radius: 8px;
+      font-size: 9px;
+      }
+      
+      .header__input {
+      height: 28px;
+      font-size: 11px;
+      text-indent: 35px;
+      }
+      
+      .input__filter {
+      font-size: 10px;
+      left: 6px;
+      }
+      
+      .rightSideBar {
+      gap: 5px;
+      justify-content: center;
+      }
+      
+      .rightSideBar a {
+      font-size: 9px;
+      }
+      
+      .rightSideBar a img {
+      height: 16px;
+      }
+      
+      .cart-badge,
+      .favorites-badge {
+      min-width: 12px;
+      height: 12px;
+      font-size: 7px;
+      top: -6px;
+      right: -6px;
+      }
+      
+      .bottomSideBar {
+      font-size: 11px;
+      gap: 6px;
+      }
+      
+      .bottomSideBar__container-left {
+      gap: 4px;
+      }
+      
+      .bottomSideBar__container-left a {
+      font-size: 10px;
+      }
+      }

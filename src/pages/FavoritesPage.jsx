@@ -3,6 +3,7 @@ import { useCart } from "../context/useCart";
 import { useFavorites } from "../context/useFavorites.jsx";
 import Header from "../components/Header.jsx";
 import "../styles.css"
+import "../pageStyles/FavoritesPageStyle.css"
 
 const FavoritesPage=()=>{
 
@@ -14,20 +15,27 @@ const FavoritesPage=()=>{
     toggleFavorite
   }=useFavorites()
 
+  const { addToCart }=useCart()
+
   if(favorites.length===0){
     return (
       <div>
-        <Header></Header>
-        <p>Страница избранного пуста</p>
-        <Link to="/">
-        <button>Вернуться к покупкам</button>
-        </Link>
+        <div className="main">
+          <Header></Header>
+          <div className="favorites-container">
+          <h2 className="text1">В избранном пока пусто</h2>
+          <div className="text2">Добавляйте товары с помощью ❤️, чтобы не потерять их и купить позже</div>
+          </div>
+          <Link to="/">
+          <button className="back-btn">Вернуться к покупкам</button>
+          </Link>
+        </div>
       </div>
     )
   }
 
   return (
-    <div>
+    <div className="main">
       <Header></Header>
       <div className="container">
 
@@ -51,7 +59,7 @@ const FavoritesPage=()=>{
             </div>
 
           </div>
-          <button className="buy-button" onClick={()=>removeFavorites(item.id)}>Удалить</button>
+          <button className="buy-button" onClick={()=>addToCart(item)}>В корзину</button>
         </div>
       ))}
       </div>

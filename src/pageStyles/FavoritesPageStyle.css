@@ -1,0 +1,61 @@
+
+.container{
+  margin-top: 10px;
+}
+
+.favorites-container{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+.back-btn{
+  width: 200px;
+  height: 40px;
+  border-radius: 16px;
+  margin-top: 15px;
+  color: #006fff;
+  background-color: rgba(0, 111, 255, 0.1);
+  border: 1px solid rgba(0, 111, 255, 0.3);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.back-btn:hover {
+  background-color: rgba(0, 111, 255, 0.2); 
+  transform: scale(1.02);
+  color: #0055cc; 
+  border-color: rgba(0, 111, 255, 0.5);
+}
+
+.text1{
+  font-size: 30px;
+}
+.text2{
+  font-size: 18px;
+}
+
+.buy-button {
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.buy-button:active {
+  transform: scale(0.95);
+}
+
+@media(max-width: 700px){
+  .back-btn{
+    width: 160px;
+    height: 32px;
+  }
+  .text1{
+    font-size: 22px;
+  }
+  .text2{
+    font-size: 14px;
+  }
+  .text3{
+    font-size: 14px;
+  }
+  
+}
